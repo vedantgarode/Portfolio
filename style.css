@@ -1,0 +1,17 @@
+.header{
+    color: cornflowerblue;
+    font-family:'Courier New', Courier;
+}
+.link{
+    color: aliceblue;
+    font-size: 30px;
+    font-family: 'Courier New', Courier;
+}
+body{
+    background-image: url('Media/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed ;
+    /* background-size: 100% 140%; */   
+    background-size: cover;
+    
+}
