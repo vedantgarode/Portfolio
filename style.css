@@ -40,9 +40,10 @@
     /* transform:scale(1.2);  */
 }
 .headsize{
-    position: relative;
-    height:200px ;
-    width: 200px;
+    
+    height:100px ;
+    width: 100px;
+    margin: 20px;
 }
 .childsize{
     height: 70px;
@@ -77,10 +78,11 @@
     color: aliceblue;
     font-size: 30px;
     font-family: 'Courier New', Courier;
+    text-align: center;
 }
 .body1{
     
-    background-image: url('Media/Landingpageback.jpg'); 
+    background-image:url('Media/Landingpageback.jpg');
     background-attachment: fixed ;
     background-size: cover;
     height: auto;
@@ -90,7 +92,7 @@
     /* background-color: red; */
 }
 .body2{
-    background-image: url('Media/background.jpg');
+    background-image: url("Media/background.jpg");
     background-size: cover;
 }
 .hcenter{
