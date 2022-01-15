@@ -13,6 +13,8 @@
     border-radius: 10px;
     border-color: rgb(255, 255, 255);
     border-style: solid;
+    box-shadow: 0px 0px 50px 5px rgb(12, 12, 12);
+    margin: 10px;
 }
 .header{
     color: rgb(255, 254, 254);
@@ -27,12 +29,14 @@
     position:fixed;
     /* background-color: red; */
     transform : translate(-50% ,-50%);
+    margin :10px;
 }
 .zoom {
     transition: transform .3s;
   }
 .zoom:hover {
-    transform:scale(1.5)
+    transform:scale(1.5);
+    filter: brightness(120%);
     /* transform:scale(1.2);  */
 }
 .headsize{
@@ -41,8 +45,9 @@
     width: 200px;
 }
 .childsize{
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width:70px;
+    margin: 10px;
 }
 .Wborder{
     /* display: inline; */
@@ -50,7 +55,7 @@
     border-color: rgb(255, 255, 255);
     border-width: 2px;
     border-radius: 50%;
-    box-shadow: 0px 0px 50px  rgb(12, 12, 12);
+    box-shadow: 0px 0px 50px 5px  rgb(12, 12, 12);
     
 }
 .Rborder{
@@ -59,7 +64,7 @@
     border-color: rgb(255, 255, 255);
     border-width: 3px;
     border-radius: 100%;
-    box-shadow: 0px 0px 50px  rgb(19, 18, 18);
+    box-shadow: 0px 0px 50px 5px   rgb(19, 18, 18);
     
 }
     
@@ -68,14 +73,13 @@
     background-color:rgba(255, 255, 255, 0.171);
 }
 .link{
+    
     color: aliceblue;
     font-size: 30px;
     font-family: 'Courier New', Courier;
 }
 .body1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     background-image: url('Media/Landingpageback.jpg'); 
     background-attachment: fixed ;
     background-size: cover;
