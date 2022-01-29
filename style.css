@@ -14,8 +14,7 @@
     box-shadow: 0px 0px 50px 5px rgb(12, 12, 12);
     margin-top: 5%;
     /*margin-left: 30%; */
-    padding : 100px;
-    overflow: hidden;
+    padding: 50px;
     }
 .header{
     color: rgb(255, 254, 254);
@@ -126,4 +125,9 @@ transform:scale(1.5) rotate(25deg);
     height: auto;
     width: auto;
     background-attachment: fixed ;
+}
+.resume{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
 }
