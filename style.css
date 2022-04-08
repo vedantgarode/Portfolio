@@ -84,21 +84,22 @@
     animation-duration: 6s;
     animation-iteration-count: infinite;
     border: 4px solid transparent;
-    border-radius: 50%;
-    margin: 10px; 
-    height: 150px;
-    width: 150px;
+    border-radius: 20px; 
+    height: 50%;
+    width: 50%;
     transition-duration: 0.5s;
-    background-color: rgba(0, 0, 0, 0.144);
-    background-image: url("Media/Dporwot.jpg");
     background-size: cover;
-    
 }
 .class-container-card-content{
-    
+    color: white;
     text-align: center;
     font-family: Poppins;
+    margin: 20px;
 }
+.class-container-card-content h2{
+    margin: 0px;
+}
+
 .class-container-card:hover{
     transform: scale(1.5);
     transition-duration: 0.5s;
