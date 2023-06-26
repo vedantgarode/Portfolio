@@ -1,19 +1,24 @@
 @keyframes border-animation{
-    0%  {border-color: rgb(255, 255, 255);box-shadow:0px 00px 200px 20px  red;}
-    25%  {border-color: rgb(245, 245, 245);box-shadow:0px 0px 200px 20px  rgb(238, 255, 0);}
-    50%  {border-color: rgb(255, 255, 255);box-shadow:0px 0px 200px 20px  rgb(0, 255, 21);}
-    75%  {border-color: rgb(255, 255, 255);box-shadow:0px 0px 200px 20px rgb(0, 195, 255);}
-    100%  {border-color: rgb(254, 254, 254);box-shadow:0px 0px 200px 20px rgb(255, 0, 0);}
+    0%  {border-color: rgb(255, 255, 255);box-shadow:0px 00px 200px 20px  rgb(43, 255, 0);}
+    25%  {border-color: rgb(245, 245, 245);box-shadow:0px 0px 200px 20px  rgb(0, 255, 157);}
+    50%  {border-color: rgb(255, 255, 255);box-shadow:0px 0px 200px 20px  rgb(0, 255, 221);}
+    75%  {border-color: rgb(255, 255, 255);box-shadow:0px 0px 200px 20px rgb(0, 145, 255);}
+    100%  {border-color: rgb(254, 254, 254);box-shadow:0px 0px 200px 20px rgb(0, 102, 255);}
 }
+
 html{
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar-track
+{
+border-radius:20px;
+}
 .body{
+    cursor: crosshair;
     background: linear-gradient(#000000,#000000);
     padding: 0px;
     margin: 0px;   
     display: flex;
-    overflow: hidden; /* Hide scrollbars */
     flex-direction: column; 
 }
 
