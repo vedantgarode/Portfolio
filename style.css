@@ -1,126 +1,358 @@
-@keyframes border-animation{
-    0%  {border-color: rgb(255, 255, 255);box-shadow:0px 00px 200px 20px  rgb(43, 255, 0);}
-    25%  {border-color: rgb(245, 245, 245);box-shadow:0px 0px 200px 20px  rgb(0, 255, 157);}
-    50%  {border-color: rgb(255, 255, 255);box-shadow:0px 0px 200px 20px  rgb(0, 255, 221);}
-    75%  {border-color: rgb(255, 255, 255);box-shadow:0px 0px 200px 20px rgb(0, 145, 255);}
-    100%  {border-color: rgb(254, 254, 254);box-shadow:0px 0px 200px 20px rgb(0, 102, 255);}
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-::-webkit-scrollbar-track
-{
-border-radius:20px;
-}
-.body{
-    cursor: crosshair;
-    background: linear-gradient(#000000,#000000);
-    padding: 0px;
-    margin: 0px;   
+/* Setting the font-family and background-color for the body element */
+.body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
     display: flex;
-    flex-direction: column; 
-}
-
-#nav-bar{
-    display:flex;
-    flex-direction: row;
-    justify-content:center;
-    background-color: rgba(0, 0, 0, 0.247);
-    border-radius: 0px 0px 40px 40px;
-    position: fixed;
-    width: 100%;    
-}
-#nav-bar a{
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-    font-family:Poppins;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 20px;
-    transition-duration: 1s;
-    text-decoration: none;
-}
-
-#nav-bar a:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    transition-duration: 1s;    
-}
-#first-section{
-    width: 100%;
-    height: 100vh;
-    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;    
-}
-#about-section{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: rgb(247, 164, 0);
-}
-#link-section{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: rgb(15, 255, 15);
-}
-#project-section{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: rgb(0, 17, 255);
-}
-#card-container{
-    display: flex;
-    height: 50%;
-    width: 50%;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-}
-.class-container-card{
-    animation-name: border-animation;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    border: 4px solid transparent;
-    border-radius: 50%; 
-    height:200px;
-    width: 200px;
-    transition-duration: 0.5s;
-    background-size: cover;
-    position: relative;
-}
-.class-container-card-content{
-    color: white;
     text-align: center;
-    font-family: Poppins;
-    margin: 20px;
-}
-.class-container-card-content h2{
-    margin: 0px;
 }
 
-.class-container-card:hover{
-    transform: scale(1.5);
-    transition-duration: 0.5s;
+/* Centering the nav-bar */
+#nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #1a1a1a;
 }
-@media screen and (max-width:720px){
-    .class-container-card{
-        width: 90%;
-    }
-    #card-container{
-        width: 90%;
-    }
-    .class-container-card:hover{
-        transform: scale(1.2);
-    }
+
+/* Centering the sections */
+section {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Centering the h2 elements */
+h2 {
+    margin: 20px;
+    color: #ffffff; /* White text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Centering the ul elements */
+ul {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+    padding-center: 20px; /* Add some center padding to the list items for better alignment */
+}
+
+/* Centering the li elements */
+li {
+    margin: 10px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Setting the text-decoration, color, font-size, font-weight, and padding properties for the anchor elements inside the nav-bar element */
+#nav-bar a {
+    text-decoration: none;
+    color: #f0f0f0; /* Light text color */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Setting the color property for the anchor elements inside the nav-bar element when hovered over */
+#nav-bar a:hover {
+    color: #ff6600; /* Highlight color */
+}
+section {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Centering the h2 elements */
+h2 {
+    margin: 20px;
+    color: #ffffff; /* White text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Centering the ul elements */
+ul {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+    padding-left: 0; /* Remove left padding to remove dots */
+    list-style: none; /* Remove the default bullet points */
+}
+
+/* Centering the li elements */
+li {
+    margin: 10px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Centering the links within the certificates-section */
+#certificates-section a {
+    color: #666666; /* Slightly lighter text color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Styling for visited links in the certificates-section */
+#certificates-section a:visited {
+    color: #666666; /* Same color as regular links */
+}
+/* Setting the margin, padding, display, flex-direction, align-items, and justify-content properties for the first-section element */
+#first-section {
+    margin-top: 60px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Styling for the h2 elements inside the why-to-hire-me section */
+#why-to-hire-me h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the p elements inside the why-to-hire-me section */
+#why-to-hire-me p {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Additional sections and elements can be similarly styled based on your preferences. */
+/* Styling for the h2 elements inside the about-section */
+#about-section h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the p elements inside the about-section */
+#about-section p {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Styling for the h2 elements inside the skills-section */
+#skills-section h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the ul elements inside the skills-section */
+#skills-section ul {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the li elements inside the ul elements */
+#skills-section li {
+    margin: 10px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the h2 elements inside the education-section */
+#education-section h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the p elements inside the education-section */
+#education-section p {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Styling for the ul elements inside the education-section */
+#education-section ul {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the li elements inside the ul elements */
+#education-section li {
+    margin: 10px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the h2 elements inside the experience-section */
+#experience-section h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the p elements inside the experience-section */
+#experience-section p {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Styling for the ul elements inside the experience-section */
+#experience-section ul {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the li elements inside the ul elements */
+#experience-section li {
+    margin: 10px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the h2 elements inside the certificates-section */
+/* Styling for the h2 elements inside the certificates-section */
+#certificates-section h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the p elements inside the certificates-section */
+#certificates-section p {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Styling for the ul elements inside the certificates-section */
+#certificates-section ul {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the li elements inside the ul elements */
+#certificates-section li {
+    margin: 10px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Styling for the a elements inside the certificates-section */
+#certificates-section a {
+    color: #666666; /* Slightly lighter text color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Styling for visited links in the certificates-section */
+#certificates-section a:visited {
+    color: #666666; /* Same color as regular links */
+}
+
+
+#languages-section h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the ul elements inside the languages-section */
+#languages-section ul {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+    padding-center: 20px; /* Add some center padding to the list items for better alignment */
+}
+
+/* Styling for the li elements inside the ul elements */
+#languages-section li {
+    margin: 10px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+    text-align: center;
+}
+/* Styling for the h2 elements inside the project-section */
+#project-section h2 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Styling for the p elements inside the project-section */
+#project-section p {
+    margin: 20px;
+    color: #666666; /* Slightly lighter text color */
+    font-size: 18px;
+}
+
+/* Styling for the h3 elements inside the project-section */
+#project-section h3 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Styling for the h3 elements inside the project-section */
+#project-section h3 {
+    margin: 20px;
+    color: #e0e0e0; /* Dark text color */
+    font-size: 20px;
+    text-align: center;
 }
