@@ -24,3 +24,10 @@ outerElements.forEach((outer) => {
 
     setInterval(changeGradient, 20); // Change gradient every 20 milliseconds for each div
 });
+
+
+const menuToggle = document.getElementById('menu-toggle');
+const menuItems = document.querySelector('.menu-items');
+menuToggle.addEventListener('click', () => {
+    menuItems.classList.toggle('show');
+});
