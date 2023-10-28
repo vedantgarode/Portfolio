@@ -1,14 +1,26 @@
-// Get the container element
-var btnContainer = document.getElementById("myBtnContainer");
+// script.js
+const outerElements = document.querySelectorAll('.outer');
 
-// Get all buttons with class="btn"
-var btns = btnContainer.getElementsByClassName("btn");
+outerElements.forEach((outer) => {
+    let gradientPercentage = 0;
+    let direction = 1; // 1 for forward, -1 for backward
 
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+    function changeGradient() {
+        const yellowHue = 60; // Hue for yellow
+        const redHue = 0;    // Hue for red
+
+        const color1 = `hsla(${yellowHue + gradientPercentage}, 100%, 50%, 0.7)`; // Yellow to red
+        const color2 = `hsla(${yellowHue + gradientPercentage + 60}, 100%, 50%, 0.7)`; // Yellow to red
+        const gradient = `linear-gradient(to right, ${color1}, ${color2})`;
+        outer.style.backgroundImage = gradient;
+
+        gradientPercentage += direction;
+
+        // Check if we've reached the end
+        if (gradientPercentage >= 300 || gradientPercentage <= 0) {
+            direction *= -1; // Reverse direction at the end
+        }
+    }
+
+    setInterval(changeGradient, 20); // Change gradient every 20 milliseconds for each div
+});
