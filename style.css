@@ -188,7 +188,7 @@ li {
     margin: 10px;
     color: #666666; /* Slightly lighter text color */
     font-size: 18px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Styling for the h2 elements inside the education-section */
@@ -205,7 +205,7 @@ li {
     color: #666666; /* Slightly lighter text color */
     font-size: 18px;
     line-height: 1.5;
-    text-align: center;
+    text-align: left;
 }
 
 /* Styling for the ul elements inside the education-section */
@@ -213,7 +213,7 @@ li {
     margin: 20px;
     color: #666666; /* Slightly lighter text color */
     font-size: 18px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Styling for the li elements inside the ul elements */
@@ -221,7 +221,7 @@ li {
     margin: 10px;
     color: #666666; /* Slightly lighter text color */
     font-size: 18px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Styling for the h2 elements inside the experience-section */
@@ -246,7 +246,7 @@ li {
     margin: 20px;
     color: #666666; /* Slightly lighter text color */
     font-size: 18px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Styling for the li elements inside the ul elements */
@@ -254,7 +254,7 @@ li {
     margin: 10px;
     color: #666666; /* Slightly lighter text color */
     font-size: 18px;
-    text-align: center;
+    text-align: left;
 }
 
 /* Styling for the h2 elements inside the certificates-section */
