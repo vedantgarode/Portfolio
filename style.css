@@ -25,11 +25,14 @@ body {
 }
 
 #nav-bar {
-    padding-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
     background-color: #1a1a1a;
+    height: 8%;
+    display: flex;
+    position: fixed;
+    border-radius: 0px 0px 20px 20px ;
+    top: 0;
+    flex-direction: column;
+    width: 100%;
 }
 
 .menu-toggle {
@@ -39,10 +42,15 @@ body {
     color: white;
     font-size: 20px;
     cursor: pointer;
+    margin: 10px;
 }
 
 .menu-items {
     display: flex;
+    flex-direction: row;
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-items a {
@@ -51,20 +59,28 @@ body {
     color: white;
 }
 
-@media screen and (max-width: 768px) {
-    .menu-items {
-        display: none;
-        flex-direction: column;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu-items.show {
-        display: flex;
-    }
+.content {
+    margin-left: 20%; /* Adjust the margin to make space for the fixed sidebar */
 }
+
+.menu-items.show {
+    display: flex;
+}
+img{
+    display: none;
+ }
+
+ .logo{
+    position: fixed;
+    left: 0;
+ }
+
+
+
+
+
+
+
 
 a {
     text-decoration: none;
@@ -124,6 +140,44 @@ section {
     border-radius: 20px;
     padding: 10px;
     margin: 2px;
-    
+    margin-left: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+    .menu-toggle {
+        display: block; /* Ensure the toggle button is visible on mobile */
+    }
+    .logo{
+        display: none;
+     }
+    img{
+        width :150px;
+        height :150px;
+        border-radius: 50%;
+        display: block; 
+        position :relative
+     }
+    .menu-items {
+        display: none;
+        width: 40%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #1a1a1a;
+        
+        flex-direction: column;
+        z-index: 998; /* Ensure it's above other content */
+    }
+}

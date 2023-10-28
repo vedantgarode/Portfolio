@@ -28,6 +28,25 @@ outerElements.forEach((outer) => {
 
 const menuToggle = document.getElementById('menu-toggle');
 const menuItems = document.querySelector('.menu-items');
+const menuLinks = menuItems.querySelectorAll('a'); // Get all menu links
+
+let isMenuOpen = false;
+
 menuToggle.addEventListener('click', () => {
-    menuItems.classList.toggle('show');
+    if (isMenuOpen) {
+        menuItems.classList.remove('show');
+    } else {
+        menuItems.classList.add('show');
+    }
+    isMenuOpen = !isMenuOpen;
 });
+
+// Add event listeners to menu links
+menuLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        // Close the menu
+        menuItems.classList.remove('show');
+        isMenuOpen = false;
+    });
+});
+
