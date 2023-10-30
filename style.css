@@ -10,7 +10,16 @@ body {
     height: 100%;
     width: 100%;
 }
-
+.download-button {
+    position: fixed;
+    bottom: 10%; /* Adjust the distance from the bottom as needed */
+    right: 10%; /* Adjust the distance from the right as needed */
+    height: 50px;
+    width: 50x;
+    border-radius: 50%;
+    z-index: 999;
+    border-radius: 50%;
+}
 
 .outer {
     border-radius: 20px;
