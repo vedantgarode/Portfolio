@@ -8,33 +8,37 @@ body {
     justify-content: center;
     text-align: center;
     height: 100%;
-    margin: 0; 
     width: 100%;
 }
+
+
 .outer {
-  border-radius: 20px;
-  display: flex;
-  margin: 10px;
-  justify-content: center;
-  align-items: center;
-  display: inline-block; /* Automatically adjust width and height */
-  width: 60%;
+    border-radius: 20px;
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    display: inline-block; /* Automatically adjust width and height */
+    width: 60%;
+    background-image: linear-gradient(to right, hsla(60, 100%, 50%, 0.7), hsla(120, 100%, 50%, 0.7));
+    backdrop-filter: blur(50px); /* Adjust the blur amount as needed */
     @media (max-width: 767px) {
         width: 95%; /* Set a narrower width for mobile devices */
-    }   
+    }
 }
 
+
+
 #nav-bar {
-    background-color: #1a1a1a;
+    background-color: #1a1a1ae3;
     height: 8%;
-    display: flex;
-    position: fixed;
-    border-radius: 0px 0px 20px 20px ;
+    border-radius: 0px 0px 20px 20px;
     top: 0;
     flex-direction: column;
     width: 100%;
+    z-index: 999;
+    position: fixed; /* Keep the navigation bar fixed */
 }
-
 .menu-toggle {
     display: none;
     background: none;
@@ -59,14 +63,10 @@ body {
     color: white;
 }
 
-.content {
-    margin-left: 20%; /* Adjust the margin to make space for the fixed sidebar */
-}
-
 .menu-items.show {
     display: flex;
 }
-img{
+.profile{
     display: none;
  }
 
@@ -74,11 +74,12 @@ img{
     position: fixed;
     left: 0;
  }
-
-
-
-
-
+.picture{
+    height: 50px;
+    width: 50x;
+    border-radius: 50%;
+    
+}
 
 
 
@@ -107,7 +108,7 @@ h2 {
 h4 {
     margin: 20px;
     color: #ffffff; 
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
 }
 ul {
@@ -140,7 +141,7 @@ section {
     border-radius: 20px;
     padding: 10px;
     margin: 2px;
-    margin-left: 0px;
+    z-index: 12;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -161,7 +162,7 @@ section {
     .logo{
         display: none;
      }
-    img{
+    .profile{
         width :150px;
         height :150px;
         border-radius: 50%;
@@ -180,4 +181,9 @@ section {
         flex-direction: column;
         z-index: 998; /* Ensure it's above other content */
     }
+}
+
+.experience-separator {
+    border: none;
+    border-top: 1px solid #ccc; /* Define the separator's style and color */
 }
