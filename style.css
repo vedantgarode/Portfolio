@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #1a1a1a;
+    background-color: #0c0c0c;
     color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -8,8 +8,14 @@ body {
     justify-content: center;
     text-align: center;
     height: 100%;
-    width: 100%;
+    width: 100%;  
+    margin: 0;
+    overflow: auto; /* Enable scrolling */
 }
+::-webkit-scrollbar {
+    width: 0 !important; /* Hide the scrollbar in WebKit browsers (Safari, Chrome) */
+  }
+  
 .download-button {
     position: fixed;
     bottom: 10%; /* Adjust the distance from the bottom as needed */
@@ -146,7 +152,7 @@ p {
 
 
 section {
-    background-color: #2d2c2c;
+    background-color: #000000d7;
     border-radius: 20px;
     padding: 10px;
     margin: 2px;
@@ -196,3 +202,6 @@ section {
     border: none;
     border-top: 1px solid #ccc; /* Define the separator's style and color */
 }
+
+
+  
