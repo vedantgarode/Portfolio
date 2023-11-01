@@ -1,6 +1,7 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0c0c0c;
+    background-image: url("Media/back5.jpg");
+    background-size:cover;
     color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -152,7 +153,7 @@ p {
 
 
 section {
-    background-color: #000000d7;
+    background-color: #1a1a1ada;
     border-radius: 20px;
     padding: 10px;
     margin: 2px;
