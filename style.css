@@ -997,7 +997,7 @@ p {
 }
 
 .profile-picture-container {
-  margin-bottom: 2rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
