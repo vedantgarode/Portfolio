@@ -1647,3 +1647,20 @@ section {
         display: flex;
     }
 }
+
+/* Profile photo styling */
+.profile-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display:block;
+    margin:0 auto 1rem;
+}
+
+/* Typewriter text overrides to ensure visibility and fixed width font */
+.typewriter-text {
+    font-family: var(--font-family-mono);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+}

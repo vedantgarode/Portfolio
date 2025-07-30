@@ -1,11 +1,12 @@
 // Portfolio JavaScript - Vedant Garode
+
 document.addEventListener('DOMContentLoaded', function() {
     // Navigation Elements
     const nav = document.querySelector('.nav');
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     // Animation Elements
     const fadeElements = document.querySelectorAll('.fade-in');
     const skillCategories = document.querySelectorAll('.skill-category');
@@ -13,6 +14,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('.project-card');
     const educationItems = document.querySelectorAll('.education-item');
     const certificationCards = document.querySelectorAll('.certification-card');
+
+    // Typewriter Effect
+    function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = '';
+
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    // Initialize typewriter effect for hero title
+    function initTypewriter() {
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            // Clear existing content
+            heroTitle.innerHTML = '<span class="typewriter-text"></span><span class="typewriter-cursor">|</span>';
+
+            const typewriterText = document.querySelector('.typewriter-text');
+            const cursor = document.querySelector('.typewriter-cursor');
+
+            // Start typewriter effect after a short delay
+            setTimeout(() => {
+                typeWriter(typewriterText, 'VEDANT GARODE', 120);
+
+                // Hide cursor after typing is complete
+                setTimeout(() => {
+                    if (cursor) cursor.style.display = 'none';
+                }, 'VEDANT GARODE'.length * 120 + 1000);
+            }, 500);
+        }
+    }
 
     // Mobile Navigation Toggle
     if (navToggle && navMenu) {
@@ -48,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         // Add scrolled class for navigation styling
         if (scrollTop > 50) {
             nav.classList.add('scrolled');
@@ -62,23 +100,23 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             nav.style.transform = 'translateY(0)';
         }
-        
+
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
-    // Smooth Scrolling for Navigation Links - FIXED
+    // Smooth Scrolling for Navigation Links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
+
             if (targetId && targetId.startsWith('#')) {
                 const targetSection = document.querySelector(targetId);
-                
+
                 if (targetSection) {
                     const navHeight = nav ? nav.offsetHeight : 70;
                     const offsetTop = targetSection.offsetTop - navHeight;
-                    
+
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -98,28 +136,28 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
+
                 // Add staggered animation delay for grouped elements
                 if (entry.target.classList.contains('skill-category')) {
                     const index = Array.from(skillCategories).indexOf(entry.target);
                     entry.target.style.animationDelay = `${index * 0.1}s`;
                 }
-                
+
                 if (entry.target.classList.contains('timeline-item')) {
                     const index = Array.from(timelineItems).indexOf(entry.target);
                     entry.target.style.animationDelay = `${index * 0.2}s`;
                 }
-                
+
                 if (entry.target.classList.contains('project-card')) {
                     const index = Array.from(projectCards).indexOf(entry.target);
                     entry.target.style.animationDelay = `${index * 0.15}s`;
                 }
-                
+
                 if (entry.target.classList.contains('education-item')) {
                     const index = Array.from(educationItems).indexOf(entry.target);
                     entry.target.style.animationDelay = `${index * 0.1}s`;
                 }
-                
+
                 if (entry.target.classList.contains('certification-card')) {
                     const index = Array.from(certificationCards).indexOf(entry.target);
                     entry.target.style.animationDelay = `${index * 0.05}s`;
@@ -138,16 +176,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Active Navigation Link Highlighting
     const sections = document.querySelectorAll('section[id]');
-    
+
     window.addEventListener('scroll', function() {
         const scrollPos = window.scrollY + 100; // Offset for fixed nav
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
             const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-            
+
             if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                 // Remove active class from all links
                 navLinks.forEach(link => link.classList.remove('active'));
@@ -167,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const ripple = document.createElement('span');
             ripple.classList.add('ripple');
             this.appendChild(ripple);
-            
+
             setTimeout(() => {
                 if (ripple && ripple.parentNode) {
                     ripple.remove();
@@ -182,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
         tag.addEventListener('mouseenter', function() {
             this.style.transform = 'scale(1.1)';
         });
-        
+
         tag.addEventListener('mouseleave', function() {
             this.style.transform = 'scale(1)';
         });
@@ -220,16 +258,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = (y - centerY) / 10;
             const rotateY = (centerX - x) / 10;
-            
+
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
         });
-        
+
         card.addEventListener('mouseleave', function() {
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
         });
@@ -241,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('mouseenter', function() {
             this.style.animation = 'pulse 0.6s ease-in-out infinite';
         });
-        
+
         link.addEventListener('mouseleave', function() {
             this.style.animation = 'none';
         });
@@ -255,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (navToggle) navToggle.classList.remove('active');
             document.body.classList.remove('nav-open');
         }
-        
+
         // Arrow keys for navigation (optional enhancement)
         if (e.key === 'ArrowDown' && e.ctrlKey) {
             e.preventDefault();
@@ -265,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 scrollToSection(nextSection);
             }
         }
-        
+
         if (e.key === 'ArrowUp' && e.ctrlKey) {
             e.preventDefault();
             const currentSection = getCurrentSection();
@@ -279,16 +317,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function getCurrentSection() {
         const scrollPos = window.scrollY + 100;
         let currentSection = null;
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
-            
+
             if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                 currentSection = section;
             }
         });
-        
+
         return currentSection;
     }
 
@@ -331,13 +369,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Loading Animation
     window.addEventListener('load', function() {
         document.body.classList.add('loaded');
-        
-        // Trigger hero animations
+
+        // Initialize typewriter effect
+        initTypewriter();
+
+        // Trigger other hero animations
         const heroElements = document.querySelectorAll('.reveal-text');
         heroElements.forEach((element, index) => {
             setTimeout(() => {
                 element.classList.add('animate');
-            }, index * 200);
+            }, index * 200 + 2000); // Delay to start after typewriter
         });
     });
 
@@ -354,12 +395,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 transform: translateX(0);
             }
         }
-        
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.1); }
         }
-        
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .typewriter-cursor {
+            animation: blink 1s infinite;
+            font-weight: 100;
+            color: var(--color-primary);
+        }
+
         .ripple {
             position: absolute;
             border-radius: 50%;
@@ -374,18 +426,18 @@ document.addEventListener('DOMContentLoaded', function() {
             margin-top: -10px;
             margin-left: -10px;
         }
-        
+
         @keyframes ripple-animation {
             to {
                 transform: scale(4);
                 opacity: 0;
             }
         }
-        
+
         .nav-link.active::after {
             width: 100%;
         }
-        
+
         .loaded .reveal-text.animate {
             opacity: 1;
             transform: translateY(0);
